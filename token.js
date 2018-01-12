@@ -3,7 +3,7 @@ var token;
 module.exports =  { 
     sendToken: function () {
         var token;
-        token = 'TOKEN HERE';
+        token = 'BOT_TOKEN_HERE';
         return token;
     }
 }
