@@ -39,7 +39,7 @@ botCherprang.on('message', message => {
     }
     else if (messageRecsive === 'Koisuru' || messageRecsive === 'koisuru') {
       messageReply = 'Fortune Cookie♩♫♪';
-      message.reply(messageReply);
+      message.channel.sendMessage(messageReply);
     }
     else if (messageRecsive.match(/จริงเหรอ/)) {
       messageReply = 'ใช่ที่สุดเลยยยย (> 。<)';
@@ -47,7 +47,7 @@ botCherprang.on('message', message => {
     }
     else if (messageRecsive === 'thinking') {
       messageReply = 'https://i.redd.it/b7c67vkxjw6z.gif';
-      message.reply(messageReply);
+      message.channel.sendMessage(messageReply);
     }
     else if (messageRecsive.match(/อยากเล่นแมว/)) {
       messageReply = 'ไม่เอาน่า มาเล่นกับเฌอปรางดีกว่านะ >///<';
@@ -59,7 +59,7 @@ botCherprang.on('message', message => {
     }
     else if (messageRecsive.match(/555\+/)) {
       messageReply = 'https://tenor.com/view/cherprang-bnk48-gif-9849452';
-      message.reply(messageReply);
+      message.channel.sendMessage(messageReply);
     }
     else if (messageRecsive === 'ทำไรยุอะ') {
       messageReply = 'แอบมองเธออยู่นะจ้ะ แต่เธอไม่รู้บ้างเยย';
