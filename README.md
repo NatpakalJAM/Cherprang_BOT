@@ -14,7 +14,7 @@ $ npm install
 ```
 2. add BOT_TOKEN on token.js
 ```
-token = 'TOKEN HERE';
+token = 'BOT_TOKEN_HERE';
 ```
 
 ## start bot
