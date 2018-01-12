@@ -1,0 +1,24 @@
+{
+  "name": "cherpran-bot",
+  "version": "1.0.0",
+  "description": "Charprang bot dev by KPK",
+  "main": "Cherprang.js",
+  "dependencies": {
+    "discord.js": "^10.0.1",
+    "youtube-dl": "^1.12.2",
+    "ytdl-core": "^0.18.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chargrang-bot"
+  ],
+  "author": "KPK",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NatpakalK/Cherprang_BOT.git"
+  }
+}
