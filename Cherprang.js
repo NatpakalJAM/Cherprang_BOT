@@ -65,6 +65,10 @@ botCherprang.on('message', message => {
       messageReply = 'แอบมองเธออยู่นะจ้ะ แต่เธอไม่รู้บ้างเยย';
       message.reply(messageReply);
     }
+    else if (messageRecsive.match(/เหงา/)) {
+      messageReply = 'ไม่เป็นไร เดี๋ยวเฌออยู่เป็นเพื่อนเองน้า~ (◠‿◠✿)';
+      message.reply(messageReply);
+    }
     // else if (messageRecsive.match(/d/)) {
     //   messageReply = random(10);
     // }
@@ -93,6 +97,7 @@ function whatChangprangCanDo () {
   canDo += 'แจม\n';
   canDo += '555+\n';
   canDo += 'ทำไรยุอะ\n';
+  canDo += 'เหงา\n';
   canDo += '```';
   return canDo;
 }

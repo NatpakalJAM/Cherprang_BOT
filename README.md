@@ -7,12 +7,13 @@ Cherprang_BOT for KPK discord
 
 ## setup
 1. install Node.js first
+2. Follow command below
 ```
 $ git clone https://github.com/NatpakalK/Cherprang_BOT.git
 $ cd Cherprang_BOT
 $ npm install
 ```
-2. add BOT_TOKEN on token.js
+3. add BOT_TOKEN on token.js
 ```
 token = 'BOT_TOKEN_HERE';
 ```
