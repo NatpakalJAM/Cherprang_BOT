@@ -23,13 +23,13 @@ botCherprang.on('message', message => {
 
   if (message.author.bot != true){
     if (messageRecsive === 'เฌอปรางทำอะไรได้มั่ง') {
-      message.reply(whatChangprangCanDo());
+      message.channel.sendMessage(whatChangprangCanDo());
     }
     else if (messageRecsive.match(/สวัสดี/) || messageRecsive.match(/หวัดดี/)) {
       messageReply = 'สวัสดีค่าาาา';
       message.reply(messageReply);
     }
-    else if (messageRecsive.match(/เฌอปราง/) || messageRecsive.match(/เฌอ/) || messageRecsive.match(/แคปเฌอ/) || messageRecsive.match(/กับตัน/)) {
+    else if (messageRecsive.match(/เฌอปราง/) || messageRecsive.match(/เฌอ/) || messageRecsive.match(/แคปเฌอ/) || messageRecsive.match(/กับตัน/) || messageRecsive.match(/hello/) || messageRecsive.match(/Hello/)) {
       messageReply = 'เรียกหาเฌอเหรอคะ? (*^ -^*)';
       message.reply(messageReply);
     }
