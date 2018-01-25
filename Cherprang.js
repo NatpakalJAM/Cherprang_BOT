@@ -25,11 +25,11 @@ botCherprang.on('message', message => {
     if (messageRecsive === 'เฌอปรางทำอะไรได้มั่ง') {
       message.channel.sendMessage(whatChangprangCanDo());
     }
-    else if (messageRecsive.match(/สวัสดี/) || messageRecsive.match(/หวัดดี/)) {
+    else if (messageRecsive.match(/สวัสดี/) || messageRecsive.match(/หวัดดี/) || messageRecsive.match(/hello/) || messageRecsive.match(/Hello/)) {
       messageReply = 'สวัสดีค่าาาา';
       message.reply(messageReply);
     }
-    else if (messageRecsive.match(/เฌอปราง/) || messageRecsive.match(/เฌอ/) || messageRecsive.match(/แคปเฌอ/) || messageRecsive.match(/กับตัน/) || messageRecsive.match(/hello/) || messageRecsive.match(/Hello/)) {
+    else if (messageRecsive.match(/เฌอปราง/) || messageRecsive.match(/เฌอ/) || messageRecsive.match(/แคปเฌอ/) || messageRecsive.match(/กับตัน/)) {
       messageReply = 'เรียกหาเฌอเหรอคะ? (*^ -^*)';
       message.reply(messageReply);
     }
@@ -78,6 +78,16 @@ botCherprang.on('message', message => {
     }
   }
   
+});
+
+// Create an event listener for new guild members
+botCherprang.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('name', 'member-log');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to the server, ${member}`);
 });
 
 function random (num) {
