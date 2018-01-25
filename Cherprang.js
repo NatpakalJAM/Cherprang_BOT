@@ -1,6 +1,11 @@
 //Get discord.js
 const Discord = require('discord.js');
+
+//require Other js file
 const token = require('./token.js');
+
+//request JSON form URL
+const request = require ("request");
 
 //Create client instance as bot
 const botCherprang = new Discord.Client();
@@ -52,6 +57,15 @@ botCherprang.on('message', message => {
     else if (messageRecsive.match(/อยากเล่นแมว/)) {
       messageReply = 'ไม่เอาน่า มาเล่นกับเฌอปรางดีกว่านะ >///<';
       message.reply(messageReply);
+    }
+    else if (messageRecsive.match(/แมว/)) {
+      request({
+        url: 'http://random.cat/meow.php',
+        json: true
+      }, function (error, response, body) {
+        messageReply = 'นี่ค่ะ ' + body.file;
+        message.channel.sendMessage(messageReply);
+      })
     }
     else if (messageRecsive.match(/แจม/)) {
       messageReply = 'ตอนนี้แจมไม่อยู่ค่า คุยกับเฌอปรางก่อนละกันนะ (◠‿◠✿)';
