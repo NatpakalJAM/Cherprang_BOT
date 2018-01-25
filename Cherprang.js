@@ -55,8 +55,21 @@ botCherprang.on('message', message => {
       message.channel.sendMessage(messageReply);
     }
     else if (messageRecsive.match(/อยากเล่นแมว/)) {
-      messageReply = 'ไม่เอาน่า มาเล่นกับเฌอปรางดีกว่านะ >///<';
-      message.reply(messageReply);
+      switch(random(2)) {
+        case 1:
+          messageReply = 'ไม่เอาน่า มาเล่นกับเฌอปรางดีกว่านะ >///<';
+          message.reply(messageReply);
+          break;
+        case 2:
+          request({
+            url: 'http://random.cat/meow.php',
+            json: true
+          }, function (error, response, body) {
+            messageReply = 'นี่ค่ะ ' + body.file;
+            message.channel.sendMessage(messageReply);
+          })
+          break;
+      }
     }
     else if (messageRecsive.match(/แมว/)) {
       request({
