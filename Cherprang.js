@@ -96,9 +96,9 @@ botCherprang.on('message', message => {
       messageReply = 'ไม่เป็นไร เดี๋ยวเฌออยู่เป็นเพื่อนเองน้า~ (◠‿◠✿)';
       message.reply(messageReply);
     }
-    // else if (messageRecsive.match(/d/)) {
-    //   messageReply = random(10);
-    // }
+    else if (messageRecsive.match(/random/)) {
+      messageReply = random(10);
+    }
 
     if (message.author.bot == true){
     console.log('Bot : ' + messageReply);
