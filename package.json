@@ -4,6 +4,7 @@
   "description": "Charprang bot dev by KPK",
   "main": "Cherprang.js",
   "dependencies": {
+    "axios": "^0.17.1",
     "discord.js": "^10.0.1",
     "youtube-dl": "^1.12.2",
     "ytdl-core": "^0.18.5"

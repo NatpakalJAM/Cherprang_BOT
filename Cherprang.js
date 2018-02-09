@@ -5,7 +5,8 @@ const Discord = require('discord.js');
 const token = require('./token.js');
 
 //request JSON form URL
-const request = require ("request");
+const request = require("request");
+const axios = require("axios");
 
 //Create client instance as bot
 const botCherprang = new Discord.Client();
@@ -29,6 +30,21 @@ botCherprang.on('message', message => {
   if (message.author.bot != true){
     if (messageRecsive === 'เฌอปรางทำอะไรได้มั่ง') {
       message.channel.sendMessage(whatChangprangCanDo());
+    }
+    else if (messageRecsive.match(/^gimme/)) {
+      var key = messageRecsive.replace('gimme ', '');
+      var url = 'https://api.qwant.com/api/search/images?count=10&offset=1&q=' + key;
+
+      axios.get(url)
+        .then(function (response) {
+          var img = response.data.data.result.items[random(10)].media;
+          messageReply = 'นี่ค่ะ ' + img;
+          message.channel.sendMessage(messageReply);
+        })
+        .catch(function (error) {
+          messageReply = 'ไม่มีค่าาาาา XD';
+          message.channel.sendMessage(messageReply);
+        });
     }
     else if (messageRecsive.match(/สวัสดี/) || messageRecsive.match(/หวัดดี/) || messageRecsive.match(/hello/) || messageRecsive.match(/Hello/)) {
       messageReply = 'สวัสดีค่าาาา';
@@ -56,11 +72,11 @@ botCherprang.on('message', message => {
     }
     else if (messageRecsive.match(/อยากเล่นแมว/)) {
       switch(random(2)) {
-        case 1:
+        case 0:
           messageReply = 'ไม่เอาน่า มาเล่นกับเฌอปรางดีกว่านะ >///<';
           message.reply(messageReply);
           break;
-        case 2:
+        case 1:
           request({
             url: 'http://random.cat/meow.php',
             json: true
@@ -118,7 +134,7 @@ botCherprang.on('guildMemberAdd', member => {
 });
 
 function random (num) {
-  return Math.floor((Math.random() * num) + 1);
+  return Math.floor((Math.random() * num));
 }
 
 function whatChangprangCanDo () {
