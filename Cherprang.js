@@ -37,7 +37,7 @@ botCherprang.on('message', message => {
 
       axios.get(url)
         .then(function (response) {
-          var img = response.data.data.result.items[random(10)].media;
+          var img = response.data.data.result.items[random(9)].media;
           messageReply = 'นี่ค่ะ ' + img;
           message.channel.sendMessage(messageReply);
         })
