@@ -50,6 +50,17 @@ botCherprang.on('message', message => {
       messageReply = 'สวัสดีค่าาาา';
       message.reply(messageReply);
     }
+    else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Hello/)) {
+      switch(random(2)) {
+        case 0:
+          messageReply = 'ฝันดีค่าาาา';
+          break;
+        case 1:
+          messageReply = 'ราตรีสวัสดิ์';
+          break;
+      }
+      message.reply(messageReply);
+    }
     else if (messageRecsive.match(/เฌอปราง/) || messageRecsive.match(/เฌอ/) || messageRecsive.match(/แคปเฌอ/) || messageRecsive.match(/กับตัน/)) {
       messageReply = 'เรียกหาเฌอเหรอคะ? (*^ -^*)';
       message.reply(messageReply);
@@ -65,6 +76,10 @@ botCherprang.on('message', message => {
     else if (messageRecsive.match(/จริงเหรอ/)) {
       messageReply = 'ใช่ที่สุดเลยยยย (> 。<)';
       message.reply(messageReply);
+    }
+    else if (messageRecsive === 'คุกกี้') {
+      messageReply = 'https://scontent.fbkk5-2.fna.fbcdn.net/v/t1.0-9/27751713_409511716139793_2905288473682211443_n.jpg?oh=b2082673dd01c183192b7d9c90bf3a76&oe=5B1460A2';
+      message.channel.sendMessage(messageReply);
     }
     else if (messageRecsive === 'thinking') {
       messageReply = 'https://i.redd.it/b7c67vkxjw6z.gif';
