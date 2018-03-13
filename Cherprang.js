@@ -50,7 +50,7 @@ botCherprang.on('message', message => {
       messageReply = 'สวัสดีค่าาาา';
       message.reply(messageReply);
     }
-    else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Hello/)) {
+    else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Good Night/)) {
       switch(random(2)) {
         case 0:
           messageReply = 'ฝันดีค่าาาา';
@@ -157,6 +157,7 @@ function whatChangprangCanDo () {
   canDo += 'เฌอปราง สามารถตอบข้อความได้ประมาณนี้หล่ะ :3 \n';
   canDo += '```\n';
   canDo += 'สวัสดี | หวัดดี\n';
+  canDo += '';
   canDo += 'เฌอปราง | เฌอ | แคปเฌอ | กับตัน\n';
   canDo += 'น่ารัก\n';
   canDo += 'Koisuru | koisuru\n';
