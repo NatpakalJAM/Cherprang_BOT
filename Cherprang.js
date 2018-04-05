@@ -17,7 +17,29 @@ const botCherprang = new Discord.Client();
 
 //Set listener on 'ready'
 botCherprang.on('ready', () => {
+  
   console.log('Cherprang ready!');
+
+  /* status
+    - online
+    - idle
+    - invisible
+    - dnd
+  */
+  botCherprang.user.setStatus('online');
+  
+  /* activity
+    type=0 = playing  
+    type=1 = streaming  
+    type=2 = listening 
+  */
+  botCherprang.user.setPresence({ 
+    game: { 
+      name: 'คุกกี้เสี่ยงทาย - BNK48', 
+      type: 2
+    } 
+  });
+  
 });
 
 //Set listener on 'message'
