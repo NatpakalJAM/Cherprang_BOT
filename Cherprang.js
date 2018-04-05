@@ -20,9 +20,25 @@ botCherprang.on('ready', () => {
   
   console.log('Cherprang ready!');
 
-  //status
+  /* status
+    - online
+    - idle
+    - invisible
+    - dnd
+  */
+  botCherprang.user.setStatus('online');
   
-  //activity
+  /* activity
+    type=0 = playing  
+    type=1 = streaming  
+    type=2 = listening 
+  */
+  botCherprang.user.setPresence({ 
+    game: { 
+      name: 'คุกกี้เสี่ยงทาย - BNK48', 
+      type: 2
+    } 
+  });
   
 });
 
