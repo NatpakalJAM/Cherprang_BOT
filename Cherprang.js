@@ -17,7 +17,13 @@ const botCherprang = new Discord.Client();
 
 //Set listener on 'ready'
 botCherprang.on('ready', () => {
+  
   console.log('Cherprang ready!');
+
+  //status
+  
+  //activity
+  
 });
 
 //Set listener on 'message'
