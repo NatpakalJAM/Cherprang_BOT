@@ -72,7 +72,7 @@ botCherprang.on('message', message => {
       messageReply = 'สวัสดีค่าาาา';
       message.reply(messageReply);
     }
-    else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Good Night/)) {
+    else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Good Night/) || messageRecsive.match(/goodnight/) || messageRecsive.match(/Goodnight/) || messageRecsive.match(/oyasumi/)) {
       switch(random(2)) {
         case 0:
           messageReply = 'ฝันดีค่าาาา';
