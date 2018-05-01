@@ -73,12 +73,15 @@ botCherprang.on('message', message => {
       message.reply(messageReply);
     }
     else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Good Night/) || messageRecsive.match(/goodnight/) || messageRecsive.match(/Goodnight/) || messageRecsive.match(/oyasumi/)) {
-      switch(random(2)) {
+      switch(random(3)) {
         case 0:
-          messageReply = 'ฝันดีค่าาาา';
+          messageReply = 'ฝันดีค่าาาา (*^ -^*)';
           break;
         case 1:
-          messageReply = 'ราตรีสวัสดิ์';
+          messageReply = 'ราตรีสวัสดิ์ค่าาาา (*^ -^*)';
+          break;
+        case 2:
+          messageReply = 'อย่าลืมฝันถึงเฌอน้าาาา (> 。<)';
           break;
       }
       message.reply(messageReply);
