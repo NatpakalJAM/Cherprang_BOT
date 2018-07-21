@@ -1,4 +1,4 @@
-//Get discord.js
+﻿//Get discord.js
 const Discord = require('discord.js');
 
 //require Other js file
@@ -126,6 +126,9 @@ botCherprang.on('message', message => {
           })
           break;
       }
+    } else if (messageRecsive === 'fuck') {
+      messageReply = 'fuckyou123 testing by Wiz';
+      message.channel.sendMessage(messageReply);
     }
     else if (messageRecsive.match(/แมว/)) {
       request({
