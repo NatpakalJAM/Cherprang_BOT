@@ -151,6 +151,12 @@ botCherprang.on('message', message => {
     else if (messageRecsive.match(/เหงา/)) {
       messageReply = 'ไม่เป็นไร เดี๋ยวเฌออยู่เป็นเพื่อนเองน้า~ (◠‿◠✿)';
       message.reply(messageReply);
+    } else if ((messageRecsive.match(/เดี๋ยว/) || messageRecsive.match(/เดว/)) && (messageRecsive.match(/มา/))) {
+      messageReply = 'เฌอจะรอน้า~ (◠‿◠✿)';
+      message.reply(messageReply);
+    } else if ((messageRecsive.match(/มา/)) && (messageRecsive.match(/ละ/))) {
+      messageReply = 'ยินดีต้อนรับค่า (*^ - ^*)♩♫♪';
+      message.reply(messageReply);
     }
     // else if (messageRecsive.match(/d/)) {
     //   messageReply = random(10);
