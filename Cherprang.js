@@ -53,6 +53,10 @@ botCherprang.on('message', message => {
     if (messageRecsive === 'เฌอปรางทำอะไรได้มั่ง') {
       message.channel.sendMessage(whatChangprangCanDo());
     }
+    else if (messageRecsive.match(/^boardcast/)) {
+      messageReply = messageRecsive.replace('boardcast ', '');
+      message.channel.sendMessage('@everyone ' + messageReply);
+    }
     else if (messageRecsive.match(/^gimme/)) {
       var key = messageRecsive.replace('gimme ', '');
       var url = 'https://api.qwant.com/api/search/images?count=10&offset=1&q=' + key;
