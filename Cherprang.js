@@ -54,6 +54,7 @@ botCherprang.on('message', message => {
       message.channel.sendMessage(whatChangprangCanDo());
     }
     else if (messageRecsive.match(/^boardcast/)) {
+      message.delete();
       messageReply = messageRecsive.replace('boardcast ', '');
       message.channel.sendMessage('@everyone ' + messageReply);
     }
