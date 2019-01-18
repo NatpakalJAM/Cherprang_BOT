@@ -60,6 +60,7 @@ botCherprang.on('message', message => {
     }
     else if (messageRecsive.match(/^gif/)) {
       var key = messageRecsive.replace('gif ', '');
+      key = key.replace(/ /g,"_");
       var url = 'https://api.tenor.com/v1/random?limit=1&q=' + key;
       axios.get(url)
       .then(function (response) {
