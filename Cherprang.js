@@ -35,7 +35,7 @@ botCherprang.on('ready', () => {
   */
   botCherprang.user.setPresence({ 
     game: { 
-      name: 'คุกกี้เสี่ยงทาย - BNK48', 
+      name: 'BNK48 - BNK48', 
       type: 2
     } 
   });
@@ -58,13 +58,31 @@ botCherprang.on('message', message => {
       messageReply = messageRecsive.replace('boardcast ', '');
       message.channel.sendMessage('@everyone ' + messageReply);
     }
-    else if (messageRecsive.match(/^gimme/)) {
+    else if (messageRecsive.match(/^gif/)) {
+      var key = messageRecsive.replace('gif ', '');
+      var url = 'https://api.tenor.com/v1/random?limit=1&q=' + key;
+      axios.get(url)
+      .then(function (response) {
+        console.log(response.data.results[0].itemurl);
+        var img = response.data.results[0].itemurl
+        if (img == null || img == '') {
+          img = response.data.results[0].url
+        }
+        messageReply = 'นี่ค่ะ ' + img;
+        message.channel.sendMessage(messageReply);
+      })
+      .catch(function (error) {
+        messageReply = 'ไม่มีค่าาาาา XD';
+        message.channel.sendMessage(messageReply);
+      });
+    } else if (messageRecsive.match(/^gimme/)) {
       var key = messageRecsive.replace('gimme ', '');
-      var url = 'https://api.qwant.com/api/search/images?count=10&offset=1&q=' + key;
+      // var url = 'https://api.qwant.com/api/search/images?count=10&offset=1&q=' + key; /* qwant */
+      var url = 'http://www.splashbase.co/api/v1/images/search?query=' + key;
 
       axios.get(url)
         .then(function (response) {
-          var img = response.data.data.result.items[random(9)].media;
+          // var img = response.data.data.result.items[random(9)].media; /* qwant */
           messageReply = 'นี่ค่ะ ' + img;
           message.channel.sendMessage(messageReply);
         })
