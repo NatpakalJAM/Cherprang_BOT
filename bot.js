@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 
 //require Other js file
-const token = require('./token.js');
+const botConfig = require('./config/config.json');
 const command = require('./commands/index.js');
 
 //Create client instance as bot
@@ -38,7 +38,7 @@ botCherprang.on('ready', () => {
 botCherprang.on('message', message => {
 
   command.message(message)
-  
+
 });
 
-botCherprang.login(token.sendToken());
+botCherprang.login(botConfig.token);
