@@ -13,12 +13,16 @@ $ git clone https://github.com/NatpakalK/Cherprang_BOT.git
 $ cd Cherprang_BOT
 $ npm install
 ```
-3. add BOT_TOKEN on token.js
+3. add BOT_TOKEN on config.json
 ```
-token = 'BOT_TOKEN_HERE';
+"token" : "<YOUR_BOT_TOKEN_HERE>"
 ```
 
 ## start bot
 ```
-$ node Cherprang.js
+$ npm run dev
+```
+or
+```
+$ node bot.js
 ```
