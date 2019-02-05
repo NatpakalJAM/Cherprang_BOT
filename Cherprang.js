@@ -134,7 +134,8 @@ botCherprang.on('message', message => {
       }
     } else if (messageRecsive.match(/แมว/)) {
       request({
-        url: 'http://random.cat/meow.php',
+        // url: 'http://random.cat/meow.php',
+        url: 'http://aws.random.cat/meow',
         json: true
       }, function (error, response, body) {
         messageReply = 'นี่ค่ะ ' + body.file;
