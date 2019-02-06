@@ -20,15 +20,10 @@ botCherprang.on('ready', () => {
   */
   botCherprang.user.setStatus('online');
 
-  /* activity
-    type=0 = playing  
-    type=1 = streaming  
-    type=2 = listening 
-  */
   botCherprang.user.setPresence({
     game: {
-      name: 'BNK48 - BNK48',
-      type: 2
+      name: 'Cherprang BNK48',
+      type: 'Watching'
     }
   });
 
