@@ -17,6 +17,17 @@ module.exports = {
             message.delete();
             messageReply = messageRecsive.replace('boardcast ', '');
             message.channel.send('@everyone ' + messageReply);
+        } else if (msgRecsive.match(/^rm -msg [1-999]$/)) {
+            var com = msgRecsive.replace('rm -msg ', '');
+            var limit = parseInt(com, 10) + 1;
+            message.channel.fetchMessages({
+                    limit: limit
+                })
+                .then(function (list) {
+                    message.channel.bulkDelete(list);
+                }, function (err) {
+                    message.channel.send("ERROR: ERROR CLEARING CHANNEL.")
+                })
         } else if (messageRecsive.match(/^gif/)) {
             var key = messageRecsive.replace('gif ', '');
             var msg = tenor.random_gif(key, function (img) {
