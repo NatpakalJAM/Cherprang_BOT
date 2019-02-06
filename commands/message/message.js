@@ -1,5 +1,6 @@
 //require Other js file
 const random = require('../../common/random.js');
+const tenor = require('../../common/tenor_api.js');
 
 //request JSON form URL
 const request = require("request");
@@ -19,38 +20,22 @@ module.exports = {
                 message.channel.send('@everyone ' + messageReply);
             } else if (messageRecsive.match(/^gif/)) {
                 var key = messageRecsive.replace('gif ', '');
-                key = key.replace(/ /g, "-");
-                var url = 'https://api.tenor.com/v1/random?limit=1&q=' + key;
-                axios.get(url)
-                    .then(function (response) {
-                        var img = response.data.results[0].itemurl
-                        if (img == null || img == '') {
-                            img = response.data.results[0].url
-                        }
-                        messageReply = 'นี่ค่ะ ' + img;
-                        message.channel.send(messageReply);
-                    })
-                    .catch(function (error) {
-                        messageReply = 'ไม่มีค่าาาาา XD';
-                        message.channel.send(messageReply);
-                    });
+                var msg = tenor.random_gif(key, function (img) {
+                    if (img == null) {
+                        message.channel.send('ไม่มีค่าาาาา XD');
+                    } else {
+                        message.channel.send('นี่ค่ะ ' + img);
+                    }
+                });
             } else if (messageRecsive.match(/^gimme/)) {
-                var key = messageRecsive.replace('gimme ', '');
-                key = key.replace(/ /g, "-");
-                var url = 'https://api.tenor.com/v1/random?limit=1&q=' + key;
-                axios.get(url)
-                    .then(function (response) {
-                        var img = response.data.results[0].itemurl
-                        if (img == null || img == '') {
-                            img = response.data.results[0].url
-                        }
-                        messageReply = 'นี่ค่ะ ' + img;
-                        message.channel.send(messageReply);
-                    })
-                    .catch(function (error) {
-                        messageReply = 'ไม่มีค่าาาาา XD';
-                        message.channel.send(messageReply);
-                    });
+                var key = messageRecsive.replace('gif ', '');
+                var msg = tenor.random_gif(key, function (img) {
+                    if (img == null) {
+                        message.channel.send('ไม่มีค่าาาาา XD');
+                    } else {
+                        message.channel.send('นี่ค่ะ ' + img);
+                    }
+                });
             } else if (messageRecsive.match(/สวัสดี/) || messageRecsive.match(/หวัดดี/) || messageRecsive.match(/hello/) || messageRecsive.match(/Hello/)) {
                 messageReply = 'สวัสดีค่าาาา';
                 message.reply(messageReply);
