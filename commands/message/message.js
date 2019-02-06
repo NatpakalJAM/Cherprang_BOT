@@ -40,7 +40,7 @@ module.exports = {
                 messageReply = 'สวัสดีค่าาาา';
                 message.reply(messageReply);
             } else if (messageRecsive.match(/ฝันดี/) || messageRecsive.match(/ราตรีสวัส/) || messageRecsive.match(/good night/) || messageRecsive.match(/Good Night/) || messageRecsive.match(/goodnight/) || messageRecsive.match(/Goodnight/) || messageRecsive.match(/oyasumi/)) {
-                switch (random(3)) {
+                switch (random.random(3)) {
                     case 0:
                         messageReply = 'ฝันดีค่าาาา (*^ -^*)';
                         break;
@@ -71,7 +71,7 @@ module.exports = {
                 messageReply = 'https://i.redd.it/b7c67vkxjw6z.gif';
                 message.channel.send(messageReply);
             } else if (messageRecsive.match(/อยากเล่นแมว/)) {
-                switch (random(2)) {
+                switch (random.random(2)) {
                     case 0:
                         messageReply = 'ไม่เอาน่า มาเล่นกับเฌอปรางดีกว่านะ >///<';
                         message.reply(messageReply);
