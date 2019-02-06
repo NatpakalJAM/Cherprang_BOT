@@ -17,8 +17,8 @@ module.exports = {
             message.delete();
             messageReply = messageRecsive.replace('boardcast ', '');
             message.channel.send('@everyone ' + messageReply);
-        } else if (msgRecsive.match(/^rm -msg [1-999]$/)) {
-            var com = msgRecsive.replace('rm -msg ', '');
+        } else if (messageRecsive.match(/^rm -msg [1-999]$/)) {
+            var com = messageRecsive.replace('rm -msg ', '');
             var limit = parseInt(com, 10) + 1;
             message.channel.fetchMessages({
                     limit: limit
