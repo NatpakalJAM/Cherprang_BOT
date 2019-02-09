@@ -21,8 +21,8 @@ module.exports = {
             var com = messageRecsive.replace('rm -msg ', '');
             var limit = parseInt(com, 10) + 1;
             message.channel.fetchMessages({
-                    limit: limit
-                })
+                limit: limit
+            })
                 .then(function (list) {
                     message.channel.bulkDelete(list);
                 }, function (err) {
@@ -117,10 +117,10 @@ module.exports = {
         } else if (messageRecsive.match(/เหงา/)) {
             messageReply = 'ไม่เป็นไร เดี๋ยวเฌออยู่เป็นเพื่อนเองน้า~ (◠‿◠✿)';
             message.reply(messageReply);
-        } else if ((messageRecsive.match(/เดี๋ยว/) || messageRecsive.match(/เดว/)) && (messageRecsive.match(/มา/))) {
+        } else if (messageRecsive.match(/^เดี๋ยวมา/) || messageRecsive.match(/^เดวมา/)) {
             messageReply = 'เฌอจะรอน้า~ (◠‿◠✿)';
             message.reply(messageReply);
-        } else if ((messageRecsive.match(/มา/)) && (messageRecsive.match(/ละ/))) {
+        } else if (messageRecsive.match(/^มาละ/) || messageRecsive.match(/^มาแล้ว/)) {
             messageReply = 'ยินดีต้อนรับค่า (*^ - ^*)♩♫♪';
             message.reply(messageReply);
         }
