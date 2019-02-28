@@ -18,11 +18,14 @@ module.exports = {
             messageReply = messageRecsive.replace('boardcast ', '');
             message.channel.send('@everyone ' + messageReply);
         } else if (messageRecsive.match(/^rm -msg ([1-9]|([1-9][0-9]))$/)) {
+            if (!message.member.roles.some(r => ["Administrator", "Moderator"].includes(r.name))) {
+                return message.reply("Sorry, you don't have permissions to use this!");
+            }
             var com = messageRecsive.replace('rm -msg ', '');
             var limit = parseInt(com, 10) + 1;
             message.channel.fetchMessages({
-                limit: limit
-            })
+                    limit: limit
+                })
                 .then(function (list) {
                     message.channel.bulkDelete(list);
                 }, function (err) {
@@ -117,10 +120,10 @@ module.exports = {
         } else if (messageRecsive.match(/เหงา/)) {
             messageReply = 'ไม่เป็นไร เดี๋ยวเฌออยู่เป็นเพื่อนเองน้า~ (◠‿◠✿)';
             message.reply(messageReply);
-        } else if (messageRecsive.match(/^เดี๋ยวมา/) || messageRecsive.match(/^เดวมา/)) {
+        } else if ((messageRecsive.match(/เดี๋ยว/) || messageRecsive.match(/เดว/)) && (messageRecsive.match(/มา/))) {
             messageReply = 'เฌอจะรอน้า~ (◠‿◠✿)';
             message.reply(messageReply);
-        } else if (messageRecsive.match(/^มาละ/) || messageRecsive.match(/^มาแล้ว/)) {
+        } else if ((messageRecsive.match(/มา/)) && (messageRecsive.match(/ละ/))) {
             messageReply = 'ยินดีต้อนรับค่า (*^ - ^*)♩♫♪';
             message.reply(messageReply);
         }
