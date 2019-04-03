@@ -9,7 +9,7 @@ Cherprang_BOT for KPK discord
 1. install Node.js first
 2. Follow command below
 ```
-$ git clone https://github.com/NatpakalK/Cherprang_BOT.git
+$ git clone https://github.com/NatpakalJAM/Cherprang_BOT.git
 $ cd Cherprang_BOT
 $ npm install
 ```
