@@ -5,6 +5,7 @@
   "main": "Cherprang.js",
   "dependencies": {
     "axios": "^0.17.1",
+    "discord-youtube-api": "^0.1.0",
     "discord.js": "^11.4.2",
     "ffmpeg-binaries": "^4.0.0",
     "node-opus": "^0.3.1",
