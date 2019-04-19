@@ -17,10 +17,11 @@ $ cd Cherprang_BOT
 $ npm install
 ```
 
-3. add BOT_TOKEN on config.json
+3. config file `config\config.json`
 
 ```
-"token" : "YOUR_BOT_TOKEN"
+"token": "YOUR_BOT_TOKEN"
+"YouTube_API": "YOUR_YouTube_API_KEY"
 ```
 
 ## start bot
