@@ -32,7 +32,7 @@ botCherprang.on('message', message => {
   // if (!message.content.startsWith(PREFIX)) return;
 
   /* music */
-  if (message.content.match(/^music/)) {
+  if (message.content.match(/^c play/)) {
     command.music(message)
   }
 

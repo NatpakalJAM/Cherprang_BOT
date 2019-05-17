@@ -22,7 +22,7 @@ module.exports = {
                 });
                 const dispatcher = connection.playStream(stream, streamOptions)
                     .on("end", () => {
-                        console.log("Music Ended")
+                        // console.log("Music Ended")
                         voice_channel.leave()
                     })
                     .on("error", error => {
