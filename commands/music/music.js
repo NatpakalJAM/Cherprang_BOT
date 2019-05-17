@@ -15,7 +15,7 @@ module.exports = {
             return message.reply("join voice channel ก่อนสิคะ");
         }
 
-        youtubeSearch(message.content.replace('c play', '')).then(function (url) {
+        youtubeSearch(message.content.replace('c play ', '')).then(function (url) {
             voice_channel.join().then(connection => {
                 const stream = ytdl(url, {
                     filter: 'audioonly'
