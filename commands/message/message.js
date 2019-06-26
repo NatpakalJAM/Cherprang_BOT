@@ -17,7 +17,7 @@ module.exports = {
             message.delete();
             messageReply = messageRecsive.replace('boardcast ', '');
             message.channel.send('@everyone ' + messageReply);
-        } else if (messageRecsive.match(/^rm -msg ([1-9]|([1-9][0-9]))$/)) {
+        } else if (messageRecsive.match(/^rm -([1-9]|([1-9][0-9]))$/)) {
             if (!message.member.roles.some(r => ["Administrator", "Moderator"].includes(r.name))) {
                 return message.reply("Sorry, you don't have permissions to use this!");
             }
