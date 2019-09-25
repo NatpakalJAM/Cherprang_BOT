@@ -14,22 +14,25 @@ module.exports = {
         if (!voice_channel) {
             return message.reply("join voice channel ก่อนสิคะ");
         }
-
-        youtubeSearch(message.content.replace('c play ', '')).then(function (url) {
-            voice_channel.join().then(connection => {
-                const stream = ytdl(url, {
-                    filter: 'audioonly'
-                });
-                const dispatcher = connection.playStream(stream, streamOptions)
-                    .on("end", () => {
-                        // console.log("Music Ended")
-                        voice_channel.leave()
-                    })
-                    .on("error", error => {
-                        console.error(error)
+        if (message.content.match(/^c play/)) {
+            youtubeSearch(message.content.replace('c play ', '')).then(function (url) {
+                voice_channel.join().then(connection => {
+                    const stream = ytdl(url, {
+                        filter: 'audioonly'
                     });
+                    const dispatcher = connection.playStream(stream, streamOptions)
+                        .on("end", () => {
+                            // console.log("Music Ended")
+                            voice_channel.leave();
+                        })
+                        .on("error", error => {
+                            console.error(error);
+                        });
+                });
             });
-        });
+        } else if (messageRecsive.match(/^c stop/)) {
+            voice_channel.leave();
+        }
     }
 }
 

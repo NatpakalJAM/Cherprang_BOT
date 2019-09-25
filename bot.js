@@ -33,10 +33,10 @@ botCherprang.on('message', message => {
 
   /* music */
   if (message.content.match(/^c play/)) {
-    command.music(message)
+    command.music(message);
   }
 
-  command.message(message)
+  command.message(message);
 
 });
 
